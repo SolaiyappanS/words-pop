@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Words Pop</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="randomWords.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <!-- <body> -->
+  <body onload="generateRandomWords()">
+    <h1>Words Pop</h1>
+    <div id="pop-box"></div>
+    <div class="input-container">
+      <input type="text" name="inputText" id="inputText" value="" />
+    </div>
+    <script>
+      var input = document.getElementById("inputText");
+      input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          popElement(input.value);
+          input.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
