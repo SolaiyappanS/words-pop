@@ -11,19 +11,17 @@ h1 {
 
 #pop-box {
   text-align: center;
-  height: 50vh;
+  min-height: 30vh;
+  max-height: 50vh;
+  margin: 20px;
+  padding: 10px;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 #pop-box::-webkit-scrollbar {
   display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#pop-box {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
 #pop-box > div {
@@ -35,11 +33,13 @@ h1 {
   border-radius: 5px;
   color: #ffffff;
   display: inline-block;
+  vertical-align: middle;
   transition: 500ms;
 }
 
 .input-container {
-  margin-top: 50px;
+  width: 100%;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -48,4 +48,6 @@ h1 {
   height: 75px;
   font-size: 50px;
   text-align: center;
+  outline: none;
+  border-radius: 10px;
 }

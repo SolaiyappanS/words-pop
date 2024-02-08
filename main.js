@@ -1,5 +1,3 @@
-const randomColor = ["#3468C0", "#EF4040", "#5AA469", "#FE783F"];
-
 function getDarkColor() {
   var color = "#";
   for (var i = 0; i < 2; i++) {
@@ -17,14 +15,13 @@ function getDarkColor() {
 function randomWord() {
   const word = document.createElement("div");
   word.innerText = randomWords[Math.floor(Math.random() * randomWords.length)];
-  word.style.backgroundColor =
-    // randomColor[Math.floor(Math.random() * randomColor.length)];
-    getDarkColor();
+  word.style.backgroundColor = getDarkColor();
   document.getElementById("pop-box").appendChild(word);
 }
 
 function generateRandomWords() {
   setInterval(randomWord, 2500);
+  document.getElementById("inputText").focus();
 }
 
 function popElement(str) {
@@ -32,9 +29,12 @@ function popElement(str) {
   const wordBoxes = document.querySelectorAll("#pop-box > div");
 
   for (var i = 0; i < wordBoxes.length; i++) {
-    if (wordBoxes[i].textContent == str) {
-      // console.log(wordBoxes[i]);
-      popBox.removeChild(popBox.children[i]);
+    if (wordBoxes[i].textContent.toLowerCase() == str.toLowerCase()) {
+      popBox.children[i].style.backgroundColor = "#cc1122";
+      popBox.children[i].style.fontSize = "0px";
+      setTimeout(() => {
+        popBox.removeChild(popBox.children[i]);
+      }, 250);
       break;
     }
   }
