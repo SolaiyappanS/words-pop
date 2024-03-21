@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Protest+Riot&display=swap");
+
 body {
   background-color: #212121;
   text-align: center;
+  font-family: "Protest Riot", sans-serif;
 }
 
 h1 {
@@ -11,9 +14,10 @@ h1 {
 
 #pop-box {
   text-align: center;
-  min-height: 30vh;
-  max-height: 50vh;
+  min-height: 40vh;
+  max-height: 80vh;
   margin: 20px;
+  margin-top: auto;
   padding: 10px;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -25,10 +29,8 @@ h1 {
 }
 
 #pop-box > div {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
   font-size: 30px;
-  padding: 5px 20px 13px 20px;
+  padding: 5px 20px 10px 20px;
   margin: 4px 4px;
   border-radius: 5px;
   color: #ffffff;
@@ -38,8 +40,9 @@ h1 {
 }
 
 .input-container {
+  position: sticky;
   width: 100%;
-  margin-top: 10px;
+  bottom: 10px;
   text-align: center;
 }
 
@@ -50,4 +53,16 @@ h1 {
   text-align: center;
   outline: none;
   border-radius: 10px;
+}
+
+/* larger screens */
+@media (min-width: 800px) {
+  #pop-box {
+    max-height: 50vh;
+  }
+
+  .input-container {
+    position: static;
+    margin-top: 10px;
+  }
 }
