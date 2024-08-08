@@ -18,7 +18,12 @@ function randomWord() {
   const word = document.createElement("div");
   word.innerText = randomWords[Math.floor(Math.random() * randomWords.length)];
   word.style.backgroundColor = getDarkColor();
+  word.style.fontSize = "0px";
   document.getElementById("pop-box").appendChild(word);
+  setTimeout(() => {
+    if (document.getElementById("pop-box").lastChild)
+      document.getElementById("pop-box").lastChild.style.fontSize = "30px";
+  }, 5);
   currentWordLength = word.innerText.length;
 }
 
@@ -36,7 +41,7 @@ function popElement(str) {
 
   for (var i = 0; i < wordBoxes.length; i++) {
     if (wordBoxes[i].textContent.toLowerCase() == str.toLowerCase()) {
-      popBox.children[i].style.backgroundColor = "#cc1122";
+      popBox.children[i].style.backgroundColor = "#512";
       popBox.children[i].style.fontSize = "0px";
       setTimeout(() => {
         popBox.removeChild(popBox.children[i]);
