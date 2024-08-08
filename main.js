@@ -1,3 +1,5 @@
+var currentWordLength = 1;
+
 function getDarkColor() {
   var color = "#";
   for (var i = 0; i < 2; i++) {
@@ -17,10 +19,14 @@ function randomWord() {
   word.innerText = randomWords[Math.floor(Math.random() * randomWords.length)];
   word.style.backgroundColor = getDarkColor();
   document.getElementById("pop-box").appendChild(word);
+  currentWordLength = word.innerText.length;
 }
 
 function generateRandomWords() {
-  setInterval(randomWord, 2500);
+  setTimeout(() => {
+    randomWord();
+    generateRandomWords();
+  }, 250 + currentWordLength * 250);
   document.getElementById("inputText").focus();
 }
 
