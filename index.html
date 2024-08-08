@@ -18,7 +18,8 @@
     <script>
       var input = document.getElementById("inputText");
       input.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
+        if (event.key === " " || event.key === "Enter") {
+          // Changed from "Enter" to " "
           event.preventDefault();
           popElement(input.value);
           input.value = "";
